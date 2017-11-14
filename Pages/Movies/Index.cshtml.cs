@@ -21,9 +21,16 @@ namespace RazorTutorial.Pages.Movies
         public IList<Movie> Movie { get;set; }
 
         //当请求过来，这里的方法被调用
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string searchString)
         {
-            Movie = await _context.Movie.ToListAsync();
+            var movies = from m in _context.Movie
+                         select m;
+            if(!string.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            Movie = await movies.ToListAsync();
         }
     }
 }
