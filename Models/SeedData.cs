@@ -24,28 +24,32 @@ namespace RazorTutorial.Models
                             Title="When Harry Met Sally",
                             ReleaseDate = DateTime.Parse("1989-2-12"),
                             Genre="Romantic Comedy",
-                            Price=7.99M
+                            Price=7.99M,
+                            Rating="R"
                         },
                         new Movie
                         {
                             Title="Ghostbustomers",
                             ReleaseDate=DateTime.Parse("1984-3-13"),
                             Genre="Comedy",
-                            Price=8.99M
+                            Price=8.99M,
+                            Rating = "R"
                         },
                         new Movie
                         {
                             Title="Ghostbusters 2",
                             ReleaseDate=DateTime.Parse("1986-2-23"),
                             Price=9.99M,
-                            Genre="Comedy"
+                            Genre="Comedy",
+                            Rating = "R"
                         },
                         new Movie
                         {
                             Title="Rio Bravo",
                             ReleaseDate = DateTime.Parse("1959-4-15"),
                             Price=3.99M,
-                            Genre="Western"
+                            Genre="Western",
+                            Rating = "S"
                         }
                     );
                 context.SaveChanges();
